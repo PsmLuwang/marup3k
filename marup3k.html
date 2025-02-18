@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3k Thangba 90k Taba Marup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="p-3 bg-gray-900">
+  <h1 class="text-white text-center font-bold text-[1.3rem] my-8 mx-2">3k Thangba 90k Taba Marup</h1>
+  <h2 id="timer" class="text-orange-500 font-semibold text-center bg-gray-800 mx-auto rounded-[10px] my-3 p-3 max-w-280"></h2>
+  <section id="wrapper" class="bg-gray-800 max-w-280 m-auto p-3 flex flex-col gap-3 rounded-[12px]">
+    <div class="flex gap-[10px] bg-orange-500 p-2 rounded-[8px] font-semibold">
+      <p class="w-4">Sr.</p>
+      <p class="flex-1">Name</p>
+      <p>Month</p>
+    </div>
+  </section>
+    
+  <a href="https://psmluwang.github.io/portfolio01/"
+  class="block text-white text-center font-bold mb-10 bg-gray-800 mx-auto rounded-[10px] my-3 p-3 max-w-280"
+  >
+    <span class="text-[0.8rem] font-light">
+      Click Here to Contact
+    </span>
+    <br>
+    Web Developer :
+    <br>
+    <span class="text-orange-500">
+      Salam Priyansu Meitei
+    </span>
+  </a>
+
+  <script>
+    const data = [
+      {
+        name: "Agent",
+        month: "Jan",
+        year: "2025"
+      },
+      {
+        name: "Babynash",
+        month: "Feb",
+        year: "2025"
+      },
+      {
+        name: "John",
+        month: "Mar",
+        year: "2025"
+      },
+      {
+        name: "Praveen",
+        month: "Apr",
+        year: "2025"
+      },
+      {
+        name: "Lemba",
+        month: "May",
+        year: "2025"
+      },
+      {
+        name: "Abhilash",
+        month: "Jun",
+        year: "2025"
+      },
+      {
+        name: "Bidyalaxmi",
+        month: "Jul",
+        year: "2025"
+      },
+      {
+        name: "Chinglembi",
+        month: "Aug",
+        year: "2025"
+      },
+      {
+        name: "Luxmi",
+        month: "Sep",
+        year: "2025"
+      },
+      {
+        name: "Sonia",
+        month: "Oct",
+        year: "2025"
+      },
+      {
+        name: "Haripyari",
+        month: "Nov",
+        year: "2025"
+      },
+      {
+        name: "Mangaleibi",
+        month: "Dec",
+        year: "2025"
+      },
+      {
+        name: "AbonMai",
+        month: "Jan",
+        year: "2026"
+      },
+      {
+        name: "Amarjit",
+        month: "Feb",
+        year: "2026"
+      },
+      {
+        name: "Nirulika",
+        month: "Mar",
+        year: "2026"
+      },
+      {
+        name: "Doliya",
+        month: "Apr",
+        year: "2026"
+      },
+      {
+        name: "Jion",
+        month: "May",
+        year: "2026"
+      },
+      {
+        name: "Diana",
+        month: "Jun",
+        year: "2026"
+      },
+      {
+        name: "",
+        month: "July",
+        year: "2026"
+      },
+      {
+        name: "Medha",
+        month: "Aug",
+        year: "2026"
+      },
+      {
+        name: "Bidyalaxmi",
+        month: "Sep",
+        year: "2026"
+      },
+      {
+        name: "Tomba",
+        month: "Oct",
+        year: "2026"
+      },
+      {
+        name: "Laxmi",
+        month: "Nov",
+        year: "2026"
+      },
+      {
+        name: "Deeparani",
+        month: "Dec",
+        year: "2026"
+      },
+      {
+        name: "Lemba",
+        month: "Jan",
+        year: "2027"
+      },
+      {
+        name: "Soniya",
+        month: "Feb",
+        year: "2027"
+      },
+      {
+        name: "Prity",
+        month: "Mar",
+        year: "2027"
+      },
+      {
+        name: "Negita",
+        month: "Apr",
+        year: "2027"
+      },
+      {
+        name: "Bidyalaxmi",
+        month: "May",
+        year: "2027"
+      },
+      {
+        name: "Pravin",
+        month: "Jun",
+        year: "2027"
+      },
+      {
+        name: "Laxmi",
+        month: "Jul",
+        year: "2027"
+      },
+    ]
+    const monthMap = {
+      'Jan': 1,
+      'Feb': 2,
+      'Mar': 3,
+      'Apr': 4,
+      'May': 5,
+      'Jun': 6,
+      'Jul': 7,
+      'Aug': 8,
+      'Sep': 9,
+      'Oct': 10,
+      'Nov': 11,
+      'Dec': 12
+    };
+
+    const timer = document.getElementById('timer');
+    setInterval(() => {
+      const currentDate = new Date();
+      const currentMonth = currentDate.toLocaleString('default', { month: 'short' });
+      const currentDay = currentDate.getDate();
+      const currentYear = currentDate.getFullYear();
+      const currentTime = currentDate.toLocaleTimeString();
+      timer.innerText = `${currentDay} ${currentMonth} ${currentYear} ${currentTime}`;
+    }, 1000);
+    
+    const wrapper = document.getElementById('wrapper');
+    data.forEach((element, index) => {
+      const elementMonth = monthMap[element.month];
+      const elementYear = parseInt(element.year);
+      const monthClass = (new Date().getMonth() + 1 > elementMonth && new Date().getFullYear() >= elementYear) ? 'block' : 'hidden';
+      wrapper.innerHTML += `
+        <div class="flex gap-[10px] bg-gray-600 text-white p-2 rounded-[8px] font-semibold">
+          <p class="w-4">${index+1}.</p>
+          <p class="flex-1">${element.name}</p>
+          <p>${element.month}</p>
+          <p>${element.year}</p>
+          <div class="${monthClass} grid items-center text-center bg-white w-6 aspect-ratio-1/1 rounded-[50%]">
+            <i class="fa-solid fa-calendar-check" style="color: green;"></i>
+          </div>
+        </div>
+      `
+    });
+  </script>
+</body>
+</html>
